@@ -4,7 +4,7 @@
 }
 
 body {
-  background: #ecefeef4;
+  background: #f1f5f4f4;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,7 +21,7 @@ body {
 
 #display {
   background: #e5e7eb;
-  height: 70px;
+  height: 60px;
   text-align: right;
   font-size: 2rem;
   padding: 10px;
@@ -47,7 +47,7 @@ button {
 }
 
 .number {
-  background: #f9fafb;
+  background: #f4f5f6;
 }
 
 .number:hover {
@@ -74,4 +74,13 @@ button {
 
 #equals {
   grid-column: span 2;
+}
+
+#delete {
+  background: #fbbf24;
+  color: white;
+}
+
+#delete:hover {
+  background: #f59e0b;
 }

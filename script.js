@@ -2,6 +2,7 @@ const numberButtons = document.querySelectorAll(".number");
 const operatorButtons = document.querySelectorAll(".operator");
 const clearButton = document.querySelector("#clear");
 const equalsButton = document.querySelector("#equals");
+const deleteButton = document.querySelector("#delete");
 const display = document.querySelector("#display");
 
 const DIVIDE_BY_ZERO_ERROR = "Nice try! Can't divide by zero.";
@@ -10,6 +11,7 @@ let secondOperand = "";
 let currentOperator = "";
 let waitingForSecondOperand = false;
 let justEvaluated = false;
+let currentUserInput = "";
 
 // Handle number clicks
 numberButtons.forEach(button => {
@@ -85,6 +87,17 @@ clearButton.addEventListener("click", () => {
   waitingForSecondOperand = false;
 });
 
+// Handle delete click
+deleteButton.addEventListener("click", () => {
+
+  if (!currentOperator) {
+    firstOperand = firstOperand.slice(0, -1);
+    display.textContent = firstOperand || "0";
+  } else if (!waitingForSecondOperand) {
+    secondOperand = secondOperand.slice(0, -1);
+    display.textContent = secondOperand || "0";
+  }
+});
 
 // Functions
 
