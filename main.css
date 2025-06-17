@@ -3,20 +3,63 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* === Layout === */
 body {
-  background: #f1f5f4f4;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #f1f5f4f4;
+  margin: 0;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* === Typography === */
+header {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 600;
+  margin-top: 1.9rem;
+  color: #1A237E;
+}
+
+footer {
+  color: #1A237E;
+  display: flex;
   align-items: center;
-  height: 100vh;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  width: 100%;
+  font-size: 1.35rem;
+  gap: 0.6rem;
+}
+
+footer p {
   margin: 0;
 }
 
+footer p a {
+  color: #1A237E;
+  text-decoration: none; 
+}
+
+footer .tech {
+  color: #7b80b8;
+}
+
+.gh-link:hover {
+  color: #ef4444;
+}
+
+/* === Calculator UI === */
 .calculator {
   background: #ffffff;
-  padding: 20px;
+  padding: 1.25rem;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  width: 400px;
+  border-radius: 12px;
+  width: 22rem;
+  margin: 0 auto;
 }
 
 #display {
@@ -24,21 +67,15 @@ body {
   height: 60px;
   text-align: right;
   font-size: 2rem;
-  padding: 10px;
+  padding: 0.7rem;
   border-radius: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
   overflow-x: auto;
 }
 
-.buttons {
-  display: grid;
-  font-size: 1.2rem;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-
+/* === Buttons === */
 button {
-  padding: 20px;
+  padding: 1.25rem;
   font-size: 1.2rem;
   border: none;
   border-radius: 8px;
@@ -46,8 +83,24 @@ button {
   transition: background 0.2s ease;
 }
 
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 3.75rem;
+  gap: 0.65rem;
+}
+
+#equals {
+  grid-column: span 2;
+}
+
+#equals.tall {
+  grid-column: span 3;
+}
+
 .number {
-  background: #f4f5f6;
+  background: #F7F7F7;
+  color: #222222;
 }
 
 .number:hover {
@@ -55,25 +108,22 @@ button {
 }
 
 .operator, #equals {
-  background: #60a5fa;
+  background: #4A90E2;
   color: white;
 }
 
 .operator:hover, #equals:hover {
-  background: #3b82f6;
+  background: #779cd9;
 }
 
 #clear {
-  background: #f87171;
+  background: #FF6F61;
   color: white;
+  grid-row: span 2;
 }
 
 #clear:hover {
   background: #ef4444;
-}
-
-#equals {
-  grid-column: span 2;
 }
 
 #delete {
