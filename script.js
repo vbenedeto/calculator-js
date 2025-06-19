@@ -11,7 +11,6 @@ let secondOperand = "";
 let currentOperator = "";
 let waitingForSecondOperand = false;
 let justEvaluated = false;
-let currentUserInput = "";
 
 // Handle number clicks
 numberButtons.forEach(button => {
@@ -78,14 +77,7 @@ equalsButton.addEventListener("click", () => {
 });
 
 // Handle clear click
-clearButton.addEventListener("click", () => {
-  display.textContent = "";
-  firstOperand = "";
-  secondOperand = "";
-  currentOperator = "";
-  justEvaluated = false;
-  waitingForSecondOperand = false;
-});
+clearButton.addEventListener("click", resetCalculator);
 
 // Handle delete click
 deleteButton.addEventListener("click", () => {
@@ -100,6 +92,14 @@ deleteButton.addEventListener("click", () => {
 });
 
 // Functions
+function resetCalculator() {
+  display.textContent = "";
+  firstOperand = "";
+  secondOperand = "";
+  currentOperator = "";
+  justEvaluated = false;
+  waitingForSecondOperand = false;
+}
 
 function add(a, b) { return a + b; }
 
