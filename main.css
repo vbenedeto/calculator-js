@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* === Layout === */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #f1f5f4f4;
+  margin: 0;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* === Typography === */
+header {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 550;
+  letter-spacing: 0.1rem;
+  margin-top: 1.9rem;
+  color: #1A237E;
+}
+
+footer {
+  color: #1A237E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  width: 100%;
+  font-size: 1.35rem;
+  gap: 0.6rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer p a {
+  color: #1A237E;
+  text-decoration: none; 
+}
+
+footer .tech {
+  color: #7b80b8;
+}
+
+.gh-link:hover {
+  color: #ef4444;
+}
+
+/* === Calculator UI === */
+.calculator {
+  background: #ffffff;
+  padding: 1.25rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  width: 22rem;
+  margin: 0 auto;
+}
+
+#display {
+  background: #e5e7eb;
+  height: 60px;
+  text-align: right;
+  font-size: 2rem;
+  font-weight: 550;
+  padding: 0.7rem;
+  border-radius: 8px;
+  margin-bottom: 1.25rem;
+  overflow-x: auto;
+}
+
+/* === Buttons === */
+button {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 3.75rem;
+  gap: 0.65rem;
+}
+
+#equals {
+  grid-column: span 2;
+}
+
+#equals.tall {
+  grid-column: span 3;
+}
+
+.number {
+  background: #F7F7F7;
+  color: #222222;
+}
+
+.number:hover {
+  background: #e5e7eb;
+}
+
+.operator, #equals {
+  background: #4A90E2;
+  color: white;
+  font-size: 2.1rem;
+}
+
+.operator:hover, #equals:hover {
+  background: #779cd9;
+}
+
+#clear {
+  background: #FF6F61;
+  color: white;
+  grid-row: span 2;
+}
+
+#clear:hover {
+  background: #ef4444;
+}
+
+#delete {
+  background: #fbbf24;
+  color: white;
+}
+
+#delete:hover {
+  background: #f59e0b;
+}

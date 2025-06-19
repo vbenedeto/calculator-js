@@ -3,33 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <script src="script.js" defer></script>
+  <link rel="stylesheet" href="main.css">
   <title>Calculator</title> 
 </head>
 <body>
-  <div>
-    <div id="display"></div>
-    <br>
-    <div>
-      <button id="clear">AC</button>
-      <button class="operator">÷</button>
-      <button class="operator">X</button>
+  <header>Calculator</header>
+  <div class="calculator">
+    <div id="display">0</div>
+
+    <div class="buttons">
       <button class="operator">+</button>
-      <button class="operator">-</button>
-      <button id="equals">=</button>
-    </div>
-    <div class="numbers">
+      <button class="operator">&#8722;</button>
+      <button class="operator">&times;</button>
+      <button class="operator">÷</button>
+      
       <button class="number">7</button>
       <button class="number">8</button>
       <button class="number">9</button>
+      
       <button class="number">4</button>
       <button class="number">5</button>
       <button class="number">6</button>
+      
       <button class="number">1</button>
-      <button class="number">2</button>
+      <button class="number">2</button> 
       <button class="number">3</button>
-      <button class="number">0</button>
+
+      <button class="number zero">0</button>  
+      <button id="delete">DEL</button>  
+      <button id="clear">AC</button>
+
+      <button id="equals" class="tall">=</button>
     </div>
   </div>
+  <footer>
+    <p>
+      By <a href="https://github.com/vbenedeto" target="_blank" class="gh-link">Vittoria</a>
+    </p>
+    <span class="tech">Made with HTML · CSS · JavaScript</span>
+  </footer>
 </body>
 </html>

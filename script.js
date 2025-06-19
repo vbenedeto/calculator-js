@@ -2,6 +2,7 @@ const numberButtons = document.querySelectorAll(".number");
 const operatorButtons = document.querySelectorAll(".operator");
 const clearButton = document.querySelector("#clear");
 const equalsButton = document.querySelector("#equals");
+const deleteButton = document.querySelector("#delete");
 const display = document.querySelector("#display");
 
 const DIVIDE_BY_ZERO_ERROR = "Nice try! Can't divide by zero.";
@@ -76,17 +77,29 @@ equalsButton.addEventListener("click", () => {
 });
 
 // Handle clear click
-clearButton.addEventListener("click", () => {
+clearButton.addEventListener("click", resetCalculator);
+
+// Handle delete click
+deleteButton.addEventListener("click", () => {
+
+  if (!currentOperator) {
+    firstOperand = firstOperand.slice(0, -1);
+    display.textContent = firstOperand || "0";
+  } else if (!waitingForSecondOperand) {
+    secondOperand = secondOperand.slice(0, -1);
+    display.textContent = secondOperand || "0";
+  }
+});
+
+// Functions
+function resetCalculator() {
   display.textContent = "";
   firstOperand = "";
   secondOperand = "";
   currentOperator = "";
   justEvaluated = false;
   waitingForSecondOperand = false;
-});
-
-
-// Functions
+}
 
 function add(a, b) { return a + b; }
 
@@ -102,8 +115,8 @@ function operate(operator, num1, num2) {
   num2 = Number(num2);
 
   if (operator === "+") return add(num1, num2);
-  if (operator === "-") return subtract(num1, num2);
-  if (operator === "X") return multiply(num1, num2);
+  if (operator === "−") return subtract(num1, num2);
+  if (operator === "×") return multiply(num1, num2);
   if (operator === "÷") return divide(num1, num2);
 }
 
