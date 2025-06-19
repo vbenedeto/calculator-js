@@ -15,6 +15,7 @@ let justEvaluated = false;
 // Handle number clicks
 numberButtons.forEach(button => {
   button.addEventListener("click", () => {
+  display.classList.remove("display-error");
     if (justEvaluated) {
       firstOperand = "";
       secondOperand = "";
@@ -69,6 +70,15 @@ equalsButton.addEventListener("click", () => {
 
   let result = operate(currentOperator, firstOperand, secondOperand);
   result = roundResult(result);
+
+  if (result === DIVIDE_BY_ZERO_ERROR) {
+    display.classList.add("display-error");
+    setButtonsDisabled(true);
+  } else {
+    display.classList.remove("display-error");
+    setButtonsDisabled(false);
+  }
+
   display.textContent = result;
   firstOperand = result === DIVIDE_BY_ZERO_ERROR ? "" : result.toString();
   secondOperand = "";
@@ -92,15 +102,6 @@ deleteButton.addEventListener("click", () => {
 });
 
 // Functions
-function resetCalculator() {
-  display.textContent = "";
-  firstOperand = "";
-  secondOperand = "";
-  currentOperator = "";
-  justEvaluated = false;
-  waitingForSecondOperand = false;
-}
-
 function add(a, b) { return a + b; }
 
 function subtract(a, b) { return a - b; }
@@ -123,4 +124,25 @@ function operate(operator, num1, num2) {
 function roundResult(number) {
   if (typeof number === "string") return number; 
   return Math.round(number * 1e6) / 1e6;
+}
+
+function resetCalculator() {
+  setButtonsDisabled(false);
+  display.textContent = "";
+  firstOperand = "";
+  secondOperand = "";
+  currentOperator = "";
+  justEvaluated = false;
+  waitingForSecondOperand = false;
+}
+
+function setButtonsDisabled(disabled) {
+  const toggleButtonState = btn => {
+    btn.disabled = disabled;
+    btn.classList.toggle("disabled", disabled);
+  };
+
+  numberButtons.forEach(toggleButtonState);
+  operatorButtons.forEach(toggleButtonState);
+  [equalsButton, deleteButton].forEach(toggleButtonState);
 }

@@ -142,3 +142,14 @@ button {
 #delete:hover {
   background: #f59e0b;
 }
+
+/* === Error message === */
+.display-error {
+  font-size: 1.2rem !important;
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: default;
+}
