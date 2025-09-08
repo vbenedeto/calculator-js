@@ -5,4 +5,4 @@ This project was created as part of The Odin Project curriculum to practice DOM 
 
 ## 🔗 Live Preview
 
-[View the calculator live here](https:vbenedeto.github.io/calculator-js)
+[View the calculator live here](https://vbenedeto.github.io/calculator-js/)
